@@ -5,15 +5,16 @@ import Form from './components/form';
 import Weather from './components/weather';
 
 const API_KEY ='3db4b74cb073f031caed13e7b405ff48';
-state={
-  temp:undefined,
-  city:undefined,
-  country:undefined,
-  sunrise:undefined,
-  sunset:undefined,
-  error:undefined,
+class App extends React.Component {
+  state = {
+   temp:undefined,
+   city:undefined,
+   country:undefined,
+   sunrise:undefined,
+   sunset:undefined,
+   error:undefined
 }
-class App extends Component {
+
   gettingWeather = async (event) => {
     event.preventDefault();
    const city = event.target.elements.city.value;
@@ -34,8 +35,15 @@ class App extends Component {
     return (
       <div>
         <Info />
-        <Form weatherMetod={this.gettingWeather}/>
-        <Weather />
+        <Form weatherMethod={this.gettingWeather}/>
+        <Weather 
+         temp={this.state.temp}
+         city={this.state.city}
+         country={this.state.country}
+         sunrise={this.state.sunrise}
+         sunrise={this.state.sunrise}
+         sunset={this.state.sunset}
+         />
       </div>
     );
   }
