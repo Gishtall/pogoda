@@ -41,7 +41,6 @@ class App extends React.Component {
          city={this.state.city}
          country={this.state.country}
          sunrise={this.state.sunrise}
-         sunrise={this.state.sunrise}
          sunset={this.state.sunset}
          />
       </div>
